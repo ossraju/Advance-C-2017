@@ -1,0 +1,11 @@
+all: map
+map: maptest.o map.o status.o
+	gcc maptest.o map.o status.o -o map
+maptest.o: maptest.c
+	gcc -c maptest.c
+map.o: map.c
+	gcc -c map.c
+status.o: status.c
+	gcc -c status.c
+clean:
+	rm -rf *o map
